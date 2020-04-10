@@ -14,14 +14,11 @@
         <!-- Viewport -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Compressed CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-Q2fXBbKhtsyhYrSLa7hXCNV+FdhbQhyrjks8Kic0u/U=" crossorigin="anonymous">
-
-        <!-- Compressed JavaScript -->
-        <script defer src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-tdB5sxJ03S1jbwztV7NCvgqvMlVEvtcoJlgf62X49iM=" crossorigin="anonymous"></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
         <!-- Doc Title -->
-        <title>Grocery List</title>
+        <title>Grocery List Generator</title>
 
     </head>
     <!-- End of Head -->
@@ -35,14 +32,29 @@
             <!-- First Row -->
             <div class="row">
 
-                <!-- One-Column Header in Row One -->
-                <header class="large-1 column">
+                <!-- One-Column Hero Header in Row One -->
+                <header class="col-md-12">
 
-                    <!-- First Text Header -->
-                    <h1>Grocery List Generator</h1>
+                    <!-- Jumbotron-->
+                    <div class="jumbotron jumbotron-fluid">
+
+                        <!-- Jumbotron Container -->
+                        <div class="container">
+
+                            <!-- Title Text -->
+                            <h1 class="display-3">Grocery List Generator</h1>
+
+                            <!-- Lead Text -->
+                            <h5 class="lead">Find recipes using key ingredients and generate a grocery list.</h5>
+
+                        </div>
+                        <!-- End of Jumbotron Container -->
+
+                    </div>
+                    <!-- End of Jumbotron-->
 
                 </header>
-                <!-- End of Header -->
+                <!-- End of Hero Header -->
 
             </div>
             <!-- End of First Row -->
@@ -50,11 +62,7 @@
             <!-- Second Row -->
             <div class="row">
 
-                <div class="medium-3 columns">
-
-                    
-
-                </div>
+                
 
             </div>
             <!-- End of Second Row -->
@@ -62,13 +70,64 @@
             <!-- Third Row -->
             <div class="row">
 
-                
+                <!-- First (Food) Recipe Column -->
+                <div id="first-recipe-col" class="col-md-4">
+
+                    <!-- Recipe Card -->
+                    <div class="card">
+                        <img class="card-img-top" src="#" alt="Card image cap">
+                        <div class="card-body">
+                          <h4 class="card-title">Card title</h4>
+                          <p class="card-text">
+                            Some quick example text to build on the card title
+                            and make up the bulk of the card's content.
+                          </p>
+                          <a href="#!" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+
+                </div>
+                <!-- End of First Recipe Column -->
+
+                <!-- Second (Drink) Recipe Column -->
+                <div id="second-recipe-col" class="col-md-4">
+
+
+
+                </div>
+                <!-- End of Second Recipe Column -->
+
+                <!-- Grocery List Column -->
+                <div id="grocery-list-col" class="col-md-4">
+
+
+
+                </div>
+                <!-- End of Grocery List Column -->
 
             </div>
             <!-- End of Third Row -->
 
         </div>
         <!-- End of Grid -->
+
+        <!-- Boostrap jQuery -->
+        <script 
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
+            crossorigin="anonymous"
+        ></script>
+        <script 
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+            crossorigin="anonymous"
+        ></script>
+        <script 
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+            crossorigin="anonymous"
+        ></script>
+        <!-- End of Bootstrap jQuery -->
+
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
