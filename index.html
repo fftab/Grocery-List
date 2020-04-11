@@ -15,10 +15,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Compressed CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-Q2fXBbKhtsyhYrSLa7hXCNV+FdhbQhyrjks8Kic0u/U=" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-Q2fXBbKhtsyhYrSLa7hXCNV+FdhbQhyrjks8Kic0u/U=" crossorigin="anonymous"> -->
 
         <!-- Compressed JavaScript -->
-        <script defer src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-tdB5sxJ03S1jbwztV7NCvgqvMlVEvtcoJlgf62X49iM=" crossorigin="anonymous"></script>
+        <!-- <script defer src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-tdB5sxJ03S1jbwztV7NCvgqvMlVEvtcoJlgf62X49iM=" crossorigin="anonymous"></script> -->
 
         <!-- Doc Title -->
         <title>Grocery List</title>
@@ -72,37 +72,7 @@
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script>
-            let myURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
-            $.ajax({
-                url: myURL,
-                method: "GET"
-            }).then(function(response)
-            {
-                console.log(response);
-            });
-
-            var settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": "https://recipe-puppy.p.rapidapi.com/?p=1&i=onions%252Cgarlic&q=omelet",
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-host": "recipe-puppy.p.rapidapi.com",
-                    "x-rapidapi-key": "6942844101msh7d330b33a2c6f0ep1fd09fjsnf49c53c1afac"
-                }
-            }
-
-            // $.getJSON(settings).done(function (response) {
-            //     console.log(response);
-            // });
-
-            $.ajax(settings).done(function (response) {
-                console.log(JSON.parse(response));
-            });
-
-
-        </script>
+        <script src="./Assets/JS/script.js"></script>
 
     </body>
     <!-- End of Body -->
