@@ -20,6 +20,15 @@
         <!-- Compressed JavaScript -->
         <!-- <script defer src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-tdB5sxJ03S1jbwztV7NCvgqvMlVEvtcoJlgf62X49iM=" crossorigin="anonymous"></script> -->
 
+        <!--<script>
+            $(document).ready(function(){
+              $("form").submit(function(){
+                alert("Submitted");
+              });
+            });
+            </script>-->
+
+
         <!-- Doc Title -->
         <title>Grocery List</title>
 
@@ -40,6 +49,28 @@
 
                     <!-- First Text Header -->
                     <h1>Grocery List Generator</h1>
+
+
+                    <!--Forms (old code)-->
+                    <!--<form action="">-->
+                        <!--How many should we have and how should we name them?-->
+                        <!--<label for="iname">Drinks:</label><br>
+                        <input type="text" id="iname" name="iname" value="Search Here"><br>
+                        <label for="iname">Recipe:</label><br>
+                        <input type="text" id="rname" name="rname" value="Search Here"><br>
+                        <input type="submit" value="Submit">
+                    </form>-->
+
+                    <!--forms(form action???)-->
+                    <form action="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita">
+                        Recipe Ingredients: <input type="text" name="Recipe Ingredients"><br>
+                        Drink Ingredients: <input type="text" name="Drink Ingredients"><br>
+                        <input type="submit" value="Submit">
+                        
+                      </form> 
+                      
+
+
 
                 </header>
                 <!-- End of Header -->
