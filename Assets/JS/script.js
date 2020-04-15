@@ -198,6 +198,7 @@ $.ajax({
         count++;
 
     }
+});
 
 displayList();
 
@@ -234,4 +235,3 @@ function displayList()
     $("#grocery-list-row").append(drinkList);
 
 }
-
