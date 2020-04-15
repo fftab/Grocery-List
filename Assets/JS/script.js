@@ -1,11 +1,11 @@
 // Setting Drink Ingredients Array
-let drinkIngredients = [];
+let drinkIngredients = [1,2,3,4,5,6,7,8,9,10];
 
 // Setting Drink Directions Array
 let drinkDirections = [];
 
 // Setting Recipe Ingredients Array
-let recipeIngredients = [];
+let recipeIngredients = [1,2,3,4,5,6,7,8,9,10];
 
 // Setting Recipe Directions Array
 let recipeDirections = [];
@@ -113,7 +113,7 @@ callback	no	    string	    Callback parameter for JSONP. This will “envelop”
 
  */
 
-//Request for Food Recipe
+// //Request for Food Recipe
 $.ajax({
     url: "https://api.edamam.com/search?q=chicken&app_id=cdb4c0d1&app_key=01ef1e9976bc7573ad191fed19d65d6d",
     method: "GET",
@@ -181,4 +181,40 @@ $.ajax({
     }
 
 });
+
+displayList();
+
+function displayList()
+{
+    $("#grocery-list-row").html("");
+    let foodHeader = $("<h3>");
+    foodHeader.text("Food Recipe Ingredients")
+    let foodList = $("<ul>");
+    let drinkHeader = $("<h3>");
+    drinkHeader.text("Drink Recipe Ingredients")
+    let drinkList = $("<ul>");
+
+    for(let i = 0; i < drinkIngredients.length; i++)
+    {
+        let newLI = $("<li>");
+        newLI.text(drinkIngredients[i]);
+        drinkList.append(newLI);
+
+    }
+
+
+    for(let i = 0; i < recipeIngredients.length; i++)
+    {
+        let newLI = $("<li>");
+        newLI.text(recipeIngredients[i]);
+        foodList.append(newLI);
+
+    }   
+
+    $("#grocery-list-row").append(foodHeader);
+    $("#grocery-list-row").append(foodList);
+    $("#grocery-list-row").append(drinkHeader);
+    $("#grocery-list-row").append(drinkList);
+
+}
 
