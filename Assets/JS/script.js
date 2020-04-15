@@ -1,13 +1,22 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 // Setting Drink Ingredients Array
 let drinkIngredients = [];
+=======
+// Setting Drink Ingredients Array
+let drinkIngredients = [1,2,3,4,5,6,7,8,9,10];
+>>>>>>> master
 
 // Setting Drink Directions Array
 let drinkDirections = [];
 
 // Setting Recipe Ingredients Array
+<<<<<<< HEAD
 let recipeIngredients = [];
+=======
+let recipeIngredients = [1,2,3,4,5,6,7,8,9,10];
+>>>>>>> master
 
 // Setting Recipe Directions Array
 let recipeDirections = [];
@@ -71,11 +80,16 @@ https://www.thecocktaildb.com/api/json/v1/1/list.php?a=list
 */
 // // AJAX Request for Drink Recipe
 $.ajax({
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
     // Query URL
     url: "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita",
     // Get Reponse
     method: "GET",
 
+<<<<<<< HEAD
 }).then(function(drinkInfo){
  
     console.log(drinkInfo);
@@ -168,6 +182,22 @@ $.ajax({
 
 
 
+=======
+}).then(function(drinkInfo) {
+
+    // Logging Drink Info to the Console
+    console.log(drinkInfo);
+
+    // Setting Variable to 
+
+    // For Each Index of Drink List
+    for (let i = 0; i < drinkList.length; i++) {
+
+        // Setting Variable to 
+
+    }
+});
+>>>>>>> master
 
 /**
                 SEARCH PARAMETERS FOR EDAMAM.COM
@@ -202,9 +232,15 @@ callback	no	    string	    Callback parameter for JSONP. This will “envelop”
 
  */
 
+<<<<<<< HEAD
 //Request for Food Recipe
 $.ajax({
     url: "https://api.edamam.com/search?q=chicken&app_id=cdb4c0d1&app_key=01ef1e9976bc7573ad191fed19d65d6d",
+=======
+// //Request for Food Recipe
+$.ajax({
+    url: "https://api.edamam.com/search?q=chicken&app_id=9abd2680&app_key=0c3cd84eab883285f12414db93b17a73",
+>>>>>>> master
     method: "GET",
 // Once Recipe Object Obtained, THEN perform function on Recipes
 }).then(function(recipes){
@@ -220,6 +256,7 @@ $.ajax({
 
     // // Dynamically Create Food Recipe Card
 
+<<<<<<< HEAD
     // // *NEEDS FIXING* For Each Index of Recipes Ingredients
     for (let i = 0; i < recipeList.length; i++) {
         console.log(count)
@@ -272,3 +309,106 @@ $.ajax({
 });
 
 >>>>>>> Stashed changes
+=======
+    // For Each Index of Recipes Ingredients
+    for (let i = 0; i < recipeList.length; i++) {
+
+        // Logging Count Variable to Console
+        console.log(count);
+
+        // Setting Variable to Recipe 
+        let currentRecipe = recipeList[i].recipe;
+
+        // Setting Variable to New Div with Bootstrap Classes
+        let recipeCard = $("<div>");
+        // Adding Classes to Recipe Cards
+        recipeCard.addClass("card bg-success text-white");
+        // Setting Recipe Card Attribute of Recipe Index in Data with Value of Count
+        recipeCard.attr("data-recipeIndex", count);
+        // Setting Recipe Card Attribute of Recipe Search in Data with Value of Searched Ingredient
+        recipeCard.attr("data-recipeSearch", searchedIngredient);
+        // Append Recipe Card to HTML Element with ID of Food Recipe Row
+        $("#food-recipe-row").append(recipeCard);
+
+        // Setting Variable for New Header 3
+        let recipeCardHeader = $("<h3>");
+        // Populating Recipe Card Header Text
+        recipeCardHeader.text(currentRecipe.label);
+        // Appending Recipe Card Header to Recipe Card
+        recipeCard.append(recipeCardHeader);
+
+        // Get the thumbnail of each recipe (thumbnail)
+        let recipeCardImg = $("<img>");
+        // give thumbnail class
+        recipeCardImg.addClass("image");
+        // give thumbnail src
+        recipeCardImg.attr("src", currentRecipe.image)
+        //Append
+        recipeCard.append(recipeCardImg);    
+
+        //yield
+        let servingSize = $("<p>");
+        servingSize.text(currentRecipe.yield);
+        recipeCard.append("Serving Size: " + servingSize);
+
+        //totalTime
+        let cookTime = $("<p>");
+        cookTime.text("Cook Time: " + currentRecipe.totalTime);
+        recipeCard.append(cookTime);
+
+        //calories
+        let currentcalories = $("<p>");
+        let calories = currentRecipe.calories;
+        calories = calories.toFixed(2);
+        currentcalories.text("Calories: " + calories);
+        recipeCard.append(currentcalories);
+            
+        //url
+        let recipeUrl = $("<a>");
+        recipeUrl.attr("href", currentRecipe.url);
+        // console.log(currentRecipe.url);
+        recipeUrl.text("Directions");
+        recipeCard.append(recipeUrl);
+
+        // Increment Count
+        count++;
+
+    }
+});
+
+displayList();
+
+function displayList()
+{
+    $("#grocery-list-row").html("");
+    let foodHeader = $("<h3>");
+    foodHeader.text("Food Recipe Ingredients")
+    let foodList = $("<ul>");
+    let drinkHeader = $("<h3>");
+    drinkHeader.text("Drink Recipe Ingredients")
+    let drinkList = $("<ul>");
+
+    for(let i = 0; i < drinkIngredients.length; i++)
+    {
+        let newLI = $("<li>");
+        newLI.text(drinkIngredients[i]);
+        drinkList.append(newLI);
+
+    }
+
+
+    for(let i = 0; i < recipeIngredients.length; i++)
+    {
+        let newLI = $("<li>");
+        newLI.text(recipeIngredients[i]);
+        foodList.append(newLI);
+
+    }   
+
+    $("#grocery-list-row").append(foodHeader);
+    $("#grocery-list-row").append(foodList);
+    $("#grocery-list-row").append(drinkHeader);
+    $("#grocery-list-row").append(drinkList);
+
+}
+>>>>>>> master
