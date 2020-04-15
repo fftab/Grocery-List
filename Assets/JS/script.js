@@ -1,22 +1,18 @@
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
+
 // Setting Drink Ingredients Array
 let drinkIngredients = [];
-=======
 // Setting Drink Ingredients Array
 let drinkIngredients = [1,2,3,4,5,6,7,8,9,10];
->>>>>>> master
 
 // Setting Drink Directions Array
 let drinkDirections = [];
 
 // Setting Recipe Ingredients Array
-<<<<<<< HEAD
+
 let recipeIngredients = [];
-=======
+
 let recipeIngredients = [1,2,3,4,5,6,7,8,9,10];
->>>>>>> master
+
 
 // Setting Recipe Directions Array
 let recipeDirections = [];
@@ -80,16 +76,11 @@ https://www.thecocktaildb.com/api/json/v1/1/list.php?a=list
 */
 // // AJAX Request for Drink Recipe
 $.ajax({
-<<<<<<< HEAD
-=======
-
->>>>>>> master
     // Query URL
     url: "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita",
     // Get Reponse
     method: "GET",
 
-<<<<<<< HEAD
 }).then(function(drinkInfo){
  
     console.log(drinkInfo);
@@ -182,15 +173,6 @@ $.ajax({
 
 
 
-=======
-}).then(function(drinkInfo) {
-
-    // Logging Drink Info to the Console
-    console.log(drinkInfo);
-
-
-});
->>>>>>> master
 
 /**
                 SEARCH PARAMETERS FOR EDAMAM.COM
@@ -225,15 +207,12 @@ callback	no	    string	    Callback parameter for JSONP. This will “envelop”
 
  */
 
-<<<<<<< HEAD
 //Request for Food Recipe
-$.ajax({
-    url: "https://api.edamam.com/search?q=chicken&app_id=cdb4c0d1&app_key=01ef1e9976bc7573ad191fed19d65d6d",
-=======
+//$.ajax({
+//    url: "https://api.edamam.com/search?q=chicken&app_id=cdb4c0d1&app_key=01ef1e9976bc7573ad191fed19d65d6d",
 // //Request for Food Recipe
 $.ajax({
     url: "https://api.edamam.com/search?q=chicken&app_id=9abd2680&app_key=0c3cd84eab883285f12414db93b17a73",
->>>>>>> master
     method: "GET",
 // Once Recipe Object Obtained, THEN perform function on Recipes
 }).then(function(recipes){
@@ -249,60 +228,58 @@ $.ajax({
 
     // // Dynamically Create Food Recipe Card
 
-<<<<<<< HEAD
-    // // *NEEDS FIXING* For Each Index of Recipes Ingredients
-    for (let i = 0; i < recipeList.length; i++) {
-        console.log(count)
+
+//     // // *NEEDS FIXING* For Each Index of Recipes Ingredients
+//     for (let i = 0; i < recipeList.length; i++) {
+//         console.log(count)
 
 
-        let currentRecipe = recipeList[i].recipe;
+//         let currentRecipe = recipeList[i].recipe;
 
-        // Setting Variable to New Div with Bootstrap Classes
-        let recipeCard = $("<div>").addClass("card bg-success text-white");
-        recipeCard.attr("data-recipeIndex", count);
-        recipeCard.attr("data-recipeSearch", searchedIngredient);
-        $("#food-recipe-row").append(recipeCard);
+//         // Setting Variable to New Div with Bootstrap Classes
+//         let recipeCard = $("<div>").addClass("card bg-success text-white");
+//         recipeCard.attr("data-recipeIndex", count);
+//         recipeCard.attr("data-recipeSearch", searchedIngredient);
+//         $("#food-recipe-row").append(recipeCard);
 
-        //DO THIS FIRST      
-        let recipeCardHeader = $("<h3>");
-        recipeCardHeader.text(currentRecipe.label)
-        recipeCard.append(recipeCardHeader);
+//         //DO THIS FIRST      
+//         let recipeCardHeader = $("<h3>");
+//         recipeCardHeader.text(currentRecipe.label)
+//         recipeCard.append(recipeCardHeader);
 
-        //DO THIS SECOND
-        //Get the thumbnail of each recipe (thumbnail)
-        let recipeCardImg = $("<img>");
-        //give thumbnail class
-        //give thumbnail src
-        recipeCardImg.attr("src", currentRecipe.image)
-        //Append
-        recipeCard.append(recipeCardImg);
+//         //DO THIS SECOND
+//         //Get the thumbnail of each recipe (thumbnail)
+//         let recipeCardImg = $("<img>");
+//         //give thumbnail class
+//         //give thumbnail src
+//         recipeCardImg.attr("src", currentRecipe.image)
+//         //Append
+//         recipeCard.append(recipeCardImg);
             
 
 
-        //Get food title of the recipe (title)
-        let recipeCardIngredientList = $("<p>");
-        //give title class
-        recipeCardIngredientList.addClass("text-white");
-        let foodTitle = [];
-        //give title text
-        for(let a = 0; a < currentRecipe.ingredientLines.length; a++)
-        {
-            let tempListItem = currentRecipe.ingredientLines[a];
-            tempListItem = tempListItem.trim();
-            foodTitle.push(tempListItem);
-        }
-        // Set Food Title Text
-        recipeCardIngredientList.text(foodTitle);
-        //Append to card div
-        recipeCard.append(recipeCardIngredientList);
+//         //Get food title of the recipe (title)
+//         let recipeCardIngredientList = $("<p>");
+//         //give title class
+//         recipeCardIngredientList.addClass("text-white");
+//         let foodTitle = [];
+//         //give title text
+//         for(let a = 0; a < currentRecipe.ingredientLines.length; a++)
+//         {
+//             let tempListItem = currentRecipe.ingredientLines[a];
+//             tempListItem = tempListItem.trim();
+//             foodTitle.push(tempListItem);
+//         }
+//         // Set Food Title Text
+//         recipeCardIngredientList.text(foodTitle);
+//         //Append to card div
+//         recipeCard.append(recipeCardIngredientList);
 
-        count++;
-    }
+//         count++;
+//     }
 
-});
+// });
 
->>>>>>> Stashed changes
-=======
     // For Each Index of Recipes Ingredients
     for (let i = 0; i < recipeList.length; i++) {
 
@@ -404,4 +381,4 @@ function displayList()
     $("#grocery-list-row").append(drinkList);
 
 }
->>>>>>> master
+
