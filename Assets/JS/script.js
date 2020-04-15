@@ -80,14 +80,7 @@ $.ajax({
     // Logging Drink Info to the Console
     console.log(drinkInfo);
 
-    // Setting Variable to 
 
-    // For Each Index of Drink List
-    for (let i = 0; i < drinkList.length; i++) {
-
-        // Setting Variable to 
-
-    }
 });
 
 /**
