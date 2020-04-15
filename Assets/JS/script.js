@@ -75,9 +75,19 @@ $.ajax({
     // Get Reponse
     method: "GET",
 
-}).then(function(drinkInfo)
-{
+}).then(function(drinkInfo) {
+
+    // Logging Drink Info to the Console
     console.log(drinkInfo);
+
+    // Setting Variable to 
+
+    // For Each Index of Drink List
+    for (let i = 0; i < drinkList.length; i++) {
+
+        // Setting Variable to 
+
+    }
 });
 
 /**
@@ -131,41 +141,50 @@ $.ajax({
 
     // // Dynamically Create Food Recipe Card
 
-    // // *NEEDS FIXING* For Each Index of Recipes Ingredients
+    // For Each Index of Recipes Ingredients
     for (let i = 0; i < recipeList.length; i++) {
-        console.log(count)
 
+        // Logging Count Variable to Console
+        console.log(count);
 
+        // Setting Variable to Recipe 
         let currentRecipe = recipeList[i].recipe;
 
         // Setting Variable to New Div with Bootstrap Classes
-        let recipeCard = $("<div>").addClass("card bg-success text-white");
+        let recipeCard = $("<div>");
+        // Adding Classes to Recipe Cards
+        recipeCard.addClass("card bg-success text-white");
+        // Setting Recipe Card Attribute of Recipe Index in Data with Value of Count
         recipeCard.attr("data-recipeIndex", count);
+        // Setting Recipe Card Attribute of Recipe Search in Data with Value of Searched Ingredient
         recipeCard.attr("data-recipeSearch", searchedIngredient);
+        // Append Recipe Card to HTML Element with ID of Food Recipe Row
         $("#food-recipe-row").append(recipeCard);
 
-        //DO THIS FIRST      
+        // Setting Variable for New Header 3
         let recipeCardHeader = $("<h3>");
-        recipeCardHeader.text(currentRecipe.label)
+        // Populating Recipe Card Header Text
+        recipeCardHeader.text(currentRecipe.label);
+        // Appending Recipe Card Header to Recipe Card
         recipeCard.append(recipeCardHeader);
 
-        //DO THIS SECOND
-        //Get the thumbnail of each recipe (thumbnail)
+        // Get the thumbnail of each recipe (thumbnail)
         let recipeCardImg = $("<img>");
-        //give thumbnail class
-        //give thumbnail src
+        // give thumbnail class
+        recipeCardImg.addClass("image");
+        // give thumbnail src
         recipeCardImg.attr("src", currentRecipe.image)
-        //Append
+        // Append
         recipeCard.append(recipeCardImg);
-            
-
-
-        //Get food title of the recipe (title)
+        
+        // Get food title of the recipe (title)
         let recipeCardIngredientList = $("<p>");
-        //give title class
+        // give title class
         recipeCardIngredientList.addClass("text-white");
+        // Setting Variable to Food Title Array
         let foodTitle = [];
-        //give title text
+
+        // give title text
         for(let a = 0; a < currentRecipe.ingredientLines.length; a++)
         {
             let tempListItem = currentRecipe.ingredientLines[a];
@@ -177,8 +196,9 @@ $.ajax({
         //Append to card div
         recipeCard.append(recipeCardIngredientList);
 
+        // Increment Count
         count++;
+
     }
 
 });
-
