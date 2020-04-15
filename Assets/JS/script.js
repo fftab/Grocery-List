@@ -1,11 +1,11 @@
 // Setting Drink Ingredients Array
-let drinkIngredients = [];
+let drinkIngredients = [1,2,3,4,5,6,7,8,9,10];
 
 // Setting Drink Directions Array
 let drinkDirections = [];
 
 // Setting Recipe Ingredients Array
-let recipeIngredients = [];
+let recipeIngredients = [1,2,3,4,5,6,7,8,9,10];
 
 // Setting Recipe Directions Array
 let recipeDirections = [];
@@ -123,9 +123,9 @@ callback	no	    string	    Callback parameter for JSONP. This will “envelop”
 
  */
 
-//Request for Food Recipe
+// //Request for Food Recipe
 $.ajax({
-    url: "https://api.edamam.com/search?q=chicken&app_id=cdb4c0d1&app_key=01ef1e9976bc7573ad191fed19d65d6d",
+    url: "https://api.edamam.com/search?q=chicken&app_id=9abd2680&app_key=0c3cd84eab883285f12414db93b17a73",
     method: "GET",
 // Once Recipe Object Obtained, THEN perform function on Recipes
 }).then(function(recipes){
@@ -174,31 +174,71 @@ $.ajax({
         recipeCardImg.addClass("image");
         // give thumbnail src
         recipeCardImg.attr("src", currentRecipe.image)
-        // Append
-        recipeCard.append(recipeCardImg);
-        
-        // Get food title of the recipe (title)
-        let recipeCardIngredientList = $("<p>");
-        // give title class
-        recipeCardIngredientList.addClass("text-white");
-        // Setting Variable to Food Title Array
-        let foodTitle = [];
+        //Append
+        recipeCard.append(recipeCardImg);    
 
-        // give title text
-        for(let a = 0; a < currentRecipe.ingredientLines.length; a++)
-        {
-            let tempListItem = currentRecipe.ingredientLines[a];
-            tempListItem = tempListItem.trim();
-            foodTitle.push(tempListItem);
-        }
-        // Set Food Title Text
-        recipeCardIngredientList.text(foodTitle);
-        //Append to card div
-        recipeCard.append(recipeCardIngredientList);
+        //yield
+        let servingSize = $("<p>");
+        servingSize.text(currentRecipe.yield);
+        recipeCard.append("Serving Size: " + servingSize);
+
+        //totalTime
+        let cookTime = $("<p>");
+        cookTime.text("Cook Time: " + currentRecipe.totalTime);
+        recipeCard.append(cookTime);
+
+        //calories
+        let currentcalories = $("<p>");
+        let calories = currentRecipe.calories;
+        calories = calories.toFixed(2);
+        currentcalories.text("Calories: " + calories);
+        recipeCard.append(currentcalories);
+            
+        //url
+        let recipeUrl = $("<a>");
+        recipeUrl.attr("href", currentRecipe.url);
+        // console.log(currentRecipe.url);
+        recipeUrl.text("Directions");
+        recipeCard.append(recipeUrl);
 
         // Increment Count
         count++;
 
     }
-
 });
+
+displayList();
+
+function displayList()
+{
+    $("#grocery-list-row").html("");
+    let foodHeader = $("<h3>");
+    foodHeader.text("Food Recipe Ingredients")
+    let foodList = $("<ul>");
+    let drinkHeader = $("<h3>");
+    drinkHeader.text("Drink Recipe Ingredients")
+    let drinkList = $("<ul>");
+
+    for(let i = 0; i < drinkIngredients.length; i++)
+    {
+        let newLI = $("<li>");
+        newLI.text(drinkIngredients[i]);
+        drinkList.append(newLI);
+
+    }
+
+
+    for(let i = 0; i < recipeIngredients.length; i++)
+    {
+        let newLI = $("<li>");
+        newLI.text(recipeIngredients[i]);
+        foodList.append(newLI);
+
+    }   
+
+    $("#grocery-list-row").append(foodHeader);
+    $("#grocery-list-row").append(foodList);
+    $("#grocery-list-row").append(drinkHeader);
+    $("#grocery-list-row").append(drinkList);
+
+}
