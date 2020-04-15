@@ -1,11 +1,22 @@
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+// Setting Drink Ingredients Array
+let drinkIngredients = [];
+=======
 // Setting Drink Ingredients Array
 let drinkIngredients = [1,2,3,4,5,6,7,8,9,10];
+>>>>>>> master
 
 // Setting Drink Directions Array
 let drinkDirections = [];
 
 // Setting Recipe Ingredients Array
+<<<<<<< HEAD
+let recipeIngredients = [];
+=======
 let recipeIngredients = [1,2,3,4,5,6,7,8,9,10];
+>>>>>>> master
 
 // Setting Recipe Directions Array
 let recipeDirections = [];
@@ -69,12 +80,109 @@ https://www.thecocktaildb.com/api/json/v1/1/list.php?a=list
 */
 // // AJAX Request for Drink Recipe
 $.ajax({
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
     // Query URL
     url: "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita",
     // Get Reponse
     method: "GET",
 
+<<<<<<< HEAD
+}).then(function(drinkInfo){
+ 
+    console.log(drinkInfo);
+
+    let allDrinks = drinkInfo.drinks;
+
+    for(let i = 0; i < allDrinks.length; i++){
+    
+        console.log(allDrinks[i])
+        //Create the Card Div for the information
+            //Give classes: card, bg-success, text-white
+            let drinksCard = $("<div>").addClass("card bg-success text-white");
+                console.log(drinksCard)
+            //append to grocery-list-row/Updated: append to drink recipe row
+            $("#drink-recipe-row").append(drinksCard);
+            //Give attribute data-drinkID with the idDrink property;
+            drinksCard.attr("data-drinkID", allDrinks[i].idDrink);
+            //Give attribute data-drinkName with the strDrink property;
+            drinksCard.attr("data-drinkName", allDrinks[i].strDrink);
+        //Create Header With tag of h3
+            let drinksCardHeader = $("<h3>");
+            //Give text of drink name
+            drinksCardHeader.text(allDrinks[i].strDrink)
+            //Append to the DIV created  at the start of the for loop
+            drinksCard.append(drinksCardHeader);
+        //Create a image tag for the picture drink
+            let drinksCardImg = $("<img>");
+            //Give a src to the tag with strDrinkThumb
+            drinksCardImg.attr("src", allDrinks[i].strDrinkThumb)
+            //Append to the DIV created at the start of the for loop
+            drinksCard.append(drinksCardImg);
+        //Create a p tag to hold all ingredients of the drink
+            let drinksCardIngredientsList = $("<p>");
+            drinksCardIngredientsList.addClass("text-white");
+
+       
+            //Create an array to hold all drinks
+            let drinks = [];
+            //Go through all of the drink ingredients and add to the array
+            //let tempListItem = allDrinks[i].strIngredient[a];
+            //tempListItem = tempListItem.trim();
+            //drinks.push(tempListItem);
+
+            //grab the each ingredient and add their respecective measurements
+               //put both items in the same string
+               let string = allDrinks[i].strIngredient1 + allDrinks[i].strMeasure1;
+               drinks.push(string)
+                string = allDrinks[i].strIngredient2 + allDrinks[i].strMeasure2;
+               drinks.push(string)
+                string = allDrinks[i].strIngredient3 + allDrinks[i].strMeasure3;
+               drinks.push(string)
+                string = allDrinks[i].strIngredient4 + allDrinks[i].strMeasure4;
+               drinks.push(string)
+                string = allDrinks[i].strIngredient5 + allDrinks[i].strMeasure5;
+               drinks.push(string)
+                string = allDrinks[i].strIngredient6 + allDrinks[i].strMeasure6;
+               drinks.push(string)
+                string = allDrinks[i].strIngredient7 + allDrinks[i].strMeasure7;
+               drinks.push(string)
+                string = allDrinks[i].strIngredient8 + allDrinks[i].strMeasure8;
+               drinks.push(string)
+                string = allDrinks[i].strIngredient9 + allDrinks[i].strMeasure9;
+               drinks.push(string)
+                string = allDrinks[i].strIngredient10 + allDrinks[i].strMeasure10;
+               drinks.push(string)
+                string = allDrinks[i].strIngredient11 + allDrinks[i].strMeasure11;
+               drinks.push(string)
+                string = allDrinks[i].strIngredient12 + allDrinks[i].strMeasure12;
+               drinks.push(string)
+                string = allDrinks[i].strIngredient13 + allDrinks[i].strMeasure13;
+               drinks.push(string)
+                string = allDrinks[i].strIngredient14 + allDrinks[i].strMeasure14;
+               drinks.push(string)
+                string = allDrinks[i].strIngredient15 + allDrinks[i].strMeasure15;
+               drinks.push(string)
+
+               drinksCard.append(drinksCardIngredientsList);
+
+
+    }
+               
+               //for( let i = 0; i < 15; i++)
+               //each ingredient into the array
+               //Give tag the text of all the ingredients
+               //Append to the DIV create at the start of the for loop
+                
+
+}); 
+
+
+
+
+=======
 }).then(function(drinkInfo) {
 
     // Logging Drink Info to the Console
@@ -82,6 +190,7 @@ $.ajax({
 
 
 });
+>>>>>>> master
 
 /**
                 SEARCH PARAMETERS FOR EDAMAM.COM
@@ -116,9 +225,15 @@ callback	no	    string	    Callback parameter for JSONP. This will “envelop”
 
  */
 
+<<<<<<< HEAD
+//Request for Food Recipe
+$.ajax({
+    url: "https://api.edamam.com/search?q=chicken&app_id=cdb4c0d1&app_key=01ef1e9976bc7573ad191fed19d65d6d",
+=======
 // //Request for Food Recipe
 $.ajax({
     url: "https://api.edamam.com/search?q=chicken&app_id=9abd2680&app_key=0c3cd84eab883285f12414db93b17a73",
+>>>>>>> master
     method: "GET",
 // Once Recipe Object Obtained, THEN perform function on Recipes
 }).then(function(recipes){
@@ -134,6 +249,60 @@ $.ajax({
 
     // // Dynamically Create Food Recipe Card
 
+<<<<<<< HEAD
+    // // *NEEDS FIXING* For Each Index of Recipes Ingredients
+    for (let i = 0; i < recipeList.length; i++) {
+        console.log(count)
+
+
+        let currentRecipe = recipeList[i].recipe;
+
+        // Setting Variable to New Div with Bootstrap Classes
+        let recipeCard = $("<div>").addClass("card bg-success text-white");
+        recipeCard.attr("data-recipeIndex", count);
+        recipeCard.attr("data-recipeSearch", searchedIngredient);
+        $("#food-recipe-row").append(recipeCard);
+
+        //DO THIS FIRST      
+        let recipeCardHeader = $("<h3>");
+        recipeCardHeader.text(currentRecipe.label)
+        recipeCard.append(recipeCardHeader);
+
+        //DO THIS SECOND
+        //Get the thumbnail of each recipe (thumbnail)
+        let recipeCardImg = $("<img>");
+        //give thumbnail class
+        //give thumbnail src
+        recipeCardImg.attr("src", currentRecipe.image)
+        //Append
+        recipeCard.append(recipeCardImg);
+            
+
+
+        //Get food title of the recipe (title)
+        let recipeCardIngredientList = $("<p>");
+        //give title class
+        recipeCardIngredientList.addClass("text-white");
+        let foodTitle = [];
+        //give title text
+        for(let a = 0; a < currentRecipe.ingredientLines.length; a++)
+        {
+            let tempListItem = currentRecipe.ingredientLines[a];
+            tempListItem = tempListItem.trim();
+            foodTitle.push(tempListItem);
+        }
+        // Set Food Title Text
+        recipeCardIngredientList.text(foodTitle);
+        //Append to card div
+        recipeCard.append(recipeCardIngredientList);
+
+        count++;
+    }
+
+});
+
+>>>>>>> Stashed changes
+=======
     // For Each Index of Recipes Ingredients
     for (let i = 0; i < recipeList.length; i++) {
 
@@ -235,3 +404,4 @@ function displayList()
     $("#grocery-list-row").append(drinkList);
 
 }
+>>>>>>> master
