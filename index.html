@@ -36,7 +36,7 @@
         <!-- Beginning of Grid  -->
         <div class="container">
 
-            <!-- First Row -->
+            <!-- Header Row -->
             <div class="row">
 
                 <!-- One-Column Hero Header in Row One -->
@@ -52,7 +52,7 @@
                             <h1 class="display-3">Grocery List Generator</h1>
 
                             <!-- Lead Text -->
-                            <h5 class="lead">Find recipes using key ingredients and generate a grocery list.</h5>
+                            <h5 class="lead">Find food and cocktail recipes using key ingredients and generate a grocery list.</h5>
 
                         </div>
                         <!-- End of Jumbotron Container -->
@@ -64,32 +64,72 @@
                 <!-- End of Hero Header -->
 
             </div>
-            <!-- End of First Row -->
+            <!-- End Header Row -->
+
+            <!-- Input Row -->
+            <div class="row">
+
+                <!-- Food Input Group -->
+                <h5>Search for Food Recipes by Ingredient</h5>
+
+                <div class="input-group">
+
+                    <input id="food-ingredients-input" type="text" class="form-control" placeholder="ex. Chicken, Kale, Butter"/>
+                    <div class="input-group-append">
+                        <button id="food-search-btn" class="btn btn-success" type="button">Search Food</button>
+                    </div>
+
+                </div>
+                <!-- End of Food Input Group Division -->
+
+                <!-- Drink Input Group -->
+                <h5>Search for Drink Recipes by Ingredient</h5>
+
+                <div class="input-group">
+
+                    <input id="drink-ingredients-input" type="text" class="form-control" placeholder="ex. Rum, Tequila, Strawberry Schnapps"/>
+                    <div class="input-group-append">
+                        <button id="drink-search-btn" class="btn btn-success" type="button">Search Drinks</button>
+                    </div>
+
+                </div>
+                <!-- End of Drink Input Group -->
+                
+            </div>
+            <!-- End of Input Row -->
 
             <!-- Food Recipe Row -->
             <div class="row">
-                <div class="col-sm-5 card-deck" id="food-recipe-row" style="display:block">
 
+                <div id="food-recipe-row" class="col-sm-5 card-deck"  style="display:block">
                 <!-- Food Recipe Cards Go Here -->
-                </div>
 
-                <!-- Drink Recipe Row -->
-                <div class="col-sm-5 card-deck" id="drink-recipe-row" style="display:block">
-
-                <!-- Drink Recipe Cards Go Here -->
                 </div>
-                <!-- End of Drink Recipe Row -->
-                
-                
-                <!-- Grocery List Row -->
-                <div class="col-sm-2" id="grocery-list-row" style="display:block">
-
-                    <!-- Drink Recipe Cards Go Here -->
-                </div>
-                <!-- End of Grocery List Row -->
 
             </div>
             <!-- End of Food Recipe Row -->
+
+            <!-- Drink Recipe Row -->
+            <div class="row">
+
+                <div id="drink-recipe-row" class="col-sm-5 card-deck"  style="display:block">
+                <!-- Drink Recipe Cards Go Here -->
+
+                </div>
+
+            </div>
+            <!-- End of Drink Recipe Row -->
+            
+            <!-- Grocery List Row -->
+            <div class="row">   
+
+                <div id="grocery-list-row" class="col-sm-2" style="display:block">
+                <!-- Grocery List Cards Go Here -->
+
+                </div>
+
+            </div>
+            <!-- End of Grocery List Row -->
 
         </div>
         <!-- End of Grid -->
