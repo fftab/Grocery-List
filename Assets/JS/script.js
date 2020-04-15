@@ -115,7 +115,7 @@ callback	no	    string	    Callback parameter for JSONP. This will “envelop”
 
 // //Request for Food Recipe
 $.ajax({
-    url: "https://api.edamam.com/search?q=chicken&app_id=cdb4c0d1&app_key=01ef1e9976bc7573ad191fed19d65d6d",
+    url: "https://api.edamam.com/search?q=chicken&app_id=9abd2680&app_key=0c3cd84eab883285f12414db93b17a73",
     method: "GET",
 // Once Recipe Object Obtained, THEN perform function on Recipes
 }).then(function(recipes){
@@ -156,26 +156,31 @@ $.ajax({
         //give thumbnail src
         recipeCardImg.attr("src", currentRecipe.image)
         //Append
-        recipeCard.append(recipeCardImg);
+        recipeCard.append(recipeCardImg);    
+
+        //yield
+        let servingSize = $("<p>");
+        servingSize.text(currentRecipe.yield);
+        recipeCard.append("Serving Size: " + servingSize);
+
+        //totalTime
+        let cookTime = $("<p>");
+        cookTime.text("Cook Time: " + currentRecipe.totalTime);
+        recipeCard.append(cookTime);
+
+        //calories
+        let currentcalories = $("<p>");
+        let calories = currentRecipe.calories;
+        calories = calories.toFixed(2);
+        currentcalories.text("Calories: " + calories);
+        recipeCard.append(currentcalories);
             
-
-
-        //Get food title of the recipe (title)
-        let recipeCardIngredientList = $("<p>");
-        //give title class
-        recipeCardIngredientList.addClass("text-white");
-        let foodTitle = [];
-        //give title text
-        for(let a = 0; a < currentRecipe.ingredientLines.length; a++)
-        {
-            let tempListItem = currentRecipe.ingredientLines[a];
-            tempListItem = tempListItem.trim();
-            foodTitle.push(tempListItem);
-        }
-        // Set Food Title Text
-        recipeCardIngredientList.text(foodTitle);
-        //Append to card div
-        recipeCard.append(recipeCardIngredientList);
+        //url
+        let recipeUrl = $("<a>");
+        recipeUrl.attr("href", currentRecipe.url);
+        // console.log(currentRecipe.url);
+        recipeUrl.text("Directions");
+        recipeCard.append(recipeUrl);
 
         count++;
     }
