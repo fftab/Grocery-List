@@ -10,18 +10,19 @@
 
         <!-- Setting Document Characters to Universal Type Font -->
         <meta charset="UTF-8">
+        <!-- meta data -->
+        <meta name="description" content="Website that queries drink and food recipes. Then you can click on the recipe and populate a list of needed ingredients" />
+        <meta name="keywords" content="food, drink, recipe, list, search, calories, servings, cook, mix" />
+        <meta name="authors" content="Flo, Jose, Ike" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- End Meta Data -->
 
-        <!-- Viewport -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Compressed CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-Q2fXBbKhtsyhYrSLa7hXCNV+FdhbQhyrjks8Kic0u/U=" crossorigin="anonymous">
-
-        <!-- Compressed JavaScript -->
-        <script defer src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-tdB5sxJ03S1jbwztV7NCvgqvMlVEvtcoJlgf62X49iM=" crossorigin="anonymous"></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
         <!-- Doc Title -->
-        <title>Grocery List</title>
+        <title>Grocery List Generator</title>
 
     </head>
     <!-- End of Head -->
@@ -32,81 +33,128 @@
         <!-- Beginning of Grid  -->
         <div class="container">
 
-            <!-- First Row -->
+            <!-- Header Row -->
             <div class="row">
 
-                <!-- One-Column Header in Row One -->
-                <header class="large-1 column">
+                <!-- One-Column Hero Header in Row One -->
+                <header class="col-md-12">
 
-                    <!-- First Text Header -->
-                    <h1>Grocery List Generator</h1>
+                    <!-- Jumbotron-->
+                    <div class="jumbotron jumbotron-fluid">
+
+                        <!-- Jumbotron Container -->
+                        <div class="container">
+
+                            <!-- Title Text -->
+                            <h1 class="display-3">Grocery List Generator</h1>
+
+                            <!-- Lead Text -->
+                            <h5 class="lead">Find food and cocktail recipes using key ingredients and generate a grocery list.</h5>
+
+                        </div>
+                        <!-- End of Jumbotron Container -->
+
+                    </div>
+                    <!-- End of Jumbotron-->
 
                 </header>
-                <!-- End of Header -->
+                <!-- End of Hero Header -->
 
             </div>
-            <!-- End of First Row -->
+            <!-- End Header Row -->
 
-            <!-- Second Row -->
+            <!-- Input Row -->
             <div class="row">
 
-                <div class="medium-3 columns">
+                <!-- Food Input Group -->
+                <h5>Search for Food Recipes by Ingredient</h5>
 
-                    
+                <div class="input-group">
+
+                    <input id="food-ingredients-input" type="text" class="form-control" placeholder="ex. Chicken, Kale, Butter"/>
+                    <div class="input-group-append">
+                        <button id="food-search-btn" class="btn btn-success" type="button">Search Food</button>
+                    </div>
+
+                </div>
+                <!-- End of Food Input Group Division -->
+
+                <!-- Drink Input Group -->
+                <h5>Search for Drink Recipes by Ingredient</h5>
+
+                <div class="input-group">
+
+                    <input id="drink-ingredients-input" type="text" class="form-control" placeholder="ex. Rum, Tequila, Strawberry Schnapps"/>
+                    <div class="input-group-append">
+                        <button id="drink-search-btn" class="btn btn-success" type="button">Search Drinks</button>
+                    </div>
+
+                </div>
+                <!-- End of Drink Input Group -->
+                
+            </div>
+            <!-- End of Input Row -->
+
+            <!-- Food Recipe Row -->
+            <div class="row">
+
+                <div id="food-recipe-row" class="col-sm-5 card-deck"  style="display:block">
+                <!-- Food Recipe Cards Go Here -->
 
                 </div>
 
             </div>
-            <!-- End of Second Row -->
+            <!-- End of Food Recipe Row -->
 
-            <!-- Third Row -->
+            <!-- Drink Recipe Row -->
             <div class="row">
 
-                
+                <div id="drink-recipe-row" class="col-sm-5 card-deck"  style="display:block">
+                <!-- Drink Recipe Cards Go Here -->
+
+                </div>
 
             </div>
-            <!-- End of Third Row -->
+            <!-- End of Drink Recipe Row -->
+            
+            <!-- Grocery List Row -->
+            <div class="row">   
+
+                <div id="grocery-list-row" class="col-sm-2" style="display:block">
+                <!-- Grocery List Cards Go Here -->
+
+                </div>
+
+            </div>
+            <!-- End of Grocery List Row -->
 
         </div>
         <!-- End of Grid -->
 
+        <!-- Boostrap jQuery -->
+        <script 
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
+            crossorigin="anonymous"
+        ></script>
+        <script 
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+            crossorigin="anonymous"
+        ></script>
+        <script 
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+            crossorigin="anonymous"
+        ></script>
+        <!-- End of Bootstrap jQuery -->
+
+        <!-- AJAX, jQuery, Our Script -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script>
-            let myURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
-            $.ajax({
-                url: myURL,
-                method: "GET"
-            }).then(function(response)
-            {
-                console.log(response);
-            });
-
-            var settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": "https://recipe-puppy.p.rapidapi.com/?p=1&i=onions%252Cgarlic&q=omelet",
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-host": "recipe-puppy.p.rapidapi.com",
-                    "x-rapidapi-key": "6942844101msh7d330b33a2c6f0ep1fd09fjsnf49c53c1afac"
-                }
-            }
-
-            // $.getJSON(settings).done(function (response) {
-            //     console.log(response);
-            // });
-
-            $.ajax(settings).done(function (response) {
-                console.log(JSON.parse(response));
-            });
-
-
-        </script>
+        <script src="./Assets/JS/script.js"></script>
 
     </body>
     <!-- End of Body -->
 
 </html>
 <!-- End of Document -->
-
