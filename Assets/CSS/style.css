@@ -26,6 +26,32 @@
 
 }
 
+.styled-font {
+
+    font-family: 'Permanent Marker', cursive;
+
+    text-align: center;
+
+}
+
+.bottom-padding {
+
+    padding-bottom: 30px;
+
+}
+
+.styled-column {
+
+    justify-content: center;
+
+}
+
+.styled-button {
+
+    width: 200px;
+
+}
+
 /* Image Sizing */
 /* .image {
 

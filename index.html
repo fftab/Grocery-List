@@ -23,6 +23,12 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+        <!-- Google Fonts CSS -->
+        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome CSS -->
+        <script src="https://kit.fontawesome.com/44f6844bdb.js" crossorigin="anonymous"></script>
+
         <!-- Doc Title -->
         <title>Grocery List Generator</title>
 
@@ -75,7 +81,7 @@
 
                     <input id="food-ingredients-input" type="text" class="form-control" placeholder="ex. Chicken, Kale, Butter"/>
                     <div class="input-group-append">
-                        <button id="food-search-btn" class="btn btn-success" type="button">Search Food</button>
+                        <button id="food-search-btn" class="btn btn-success styled-button" type="button">Search Meals <i class="fas fa-utensils"></i></button>
                     </div>
 
                 </div>
@@ -88,7 +94,7 @@
 
                     <input id="drink-ingredients-input" type="text" class="form-control" placeholder="ex. Rum, Tequila, Strawberry Schnapps"/>
                     <div class="input-group-append">
-                        <button id="drink-search-btn" class="btn btn-success" type="button">Search Drinks</button>
+                        <button id="drink-search-btn" class="btn btn-success styled-button" type="button">Search Drinks <i class="fas fa-cocktail"></i></button>
                     </div>
 
                 </div>
@@ -100,20 +106,43 @@
             <!-- Recipe Cards and Grocery List Row -->
             <div id="recipe-columns" class="row">
 
-                <div id="food-recipe-row" class="col-sm-4 card-deck"  style="display:block">
-                <!-- Food Recipe Cards Go Here -->
+                <!-- Food Recipes -->
+                <div class="col-sm-4 card-deck" style="display:block">
+
+                    <!-- Header for Food Recipe Column -->
+                    <h3 class="styled-font bottom-padding">Meal Recipes</h3>
+                    
+                    <!-- Food Recipe Cards Go Here -->
+                    <div id="food-recipe-row" class="styled-column"></div>
     
                 </div>
+                <!-- End of Food Recipes -->
     
-                <div id="drink-recipe-row" class="col-sm-4 card-deck"  style="display:block">
-                <!-- Drink Recipe Cards Go Here -->
+                <!-- Drink Recipes -->
+                <div class="col-sm-4 card-deck"  style="display:block">
+
+                    <!-- Header for Drink Recipe Column -->
+                    <h3 class="styled-font bottom-padding">Drink Recipes</h3>
+
+                    <!-- Drink Recipe Cards Go Here -->
+                    <div id="drink-recipe-row" class="styled-column"></div>
+
+                    
     
                 </div>
-                 
-                <div id="grocery-list-row" class="col-sm-4" style="display:block">
-                <!-- Grocery List Cards Go Here -->
+                <!-- End of Drink Recipes -->
+
+                <!-- Grocery Lists -->
+                <div class="col-sm-4" style="display:block">
+
+                    <!-- Header for Grocery List Column -->
+                    <h3 class="styled-font bottom-padding">Grocery Lists</h3>
+
+                    <!-- Grocery List Cards Go Here -->
+                    <div id="grocery-list-row" class="styled-column"></div>
     
                 </div>
+                <!-- End of Grocery Lists -->
 
             </div>
             <!-- End of Recipe Cards and Grocery List -->

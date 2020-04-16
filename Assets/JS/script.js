@@ -395,17 +395,12 @@ function displayList() {
 
     // Clearing Row Content Before Populating Again
     $("#grocery-list-row").html("");
-    // Setting Variable to New Header 3 Element
-    let foodHeader = $("<h3>");
-    // Setting Text for Food Recipe Header
-    foodHeader.text("Food Recipe Ingredients");
+    $('#food-recipe-row').html("");
+    $("#drink-recipe-row").html("");
+    
     // Setting Variable to New Unordered List HTML Element
     let foodList = $("<ul>");
 
-    // Setting Variable to New Header 3 Element
-    let drinkHeader = $("<h3>");
-    // Setting Text for Drink Recipe Header
-    drinkHeader.text("Drink Recipe Ingredients");
     // Setting Variable to New Unordered List
     let drinkList = $("<ul>");
 
@@ -427,12 +422,10 @@ function displayList() {
 
     }   
 
-    // Prepending Food Recipe Header to the Food Recipe Row
-    $("#food-recipe-row").prepend(foodHeader);
+    
     // Appending Food Recipes to the Food Recipe Row
     $("#food-recipe-row").append(foodList);
-    // Prepending Drink Recipe Header to Drink Recipe Row
-    $("#drink-recipe-row").prepend(drinkHeader);
+    
     // Appending Drink Recipes to Drink Recipe Row
     $("#drink-recipe-row").append(drinkList);
 
