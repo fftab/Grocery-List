@@ -19,8 +19,8 @@
 
 }
 
-/* Displaying Jumbotron Content in Center */
-.jumbotron-content {
+/* Displaying Content in Center */
+.center-content {
 
     text-align: center;
 
@@ -37,6 +37,18 @@
 .bottom-padding {
 
     padding-bottom: 30px;
+
+}
+
+.navbar-padding {
+
+    padding-bottom: 100px;
+
+}
+
+.top-padding {
+
+    padding-top: 30px;
 
 }
 
