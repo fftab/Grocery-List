@@ -17,6 +17,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- End Meta Data -->
 
+        <!-- Out CSS -->
+        <link rel="stylesheet" href="Assets/CSS/style.css"/>
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -37,19 +39,19 @@
             <div class="row">
 
                 <!-- One-Column Hero Header in Row One -->
-                <header class="col-md-12">
+                <header class="col-lg-12">
 
                     <!-- Jumbotron-->
-                    <div class="jumbotron jumbotron-fluid">
+                    <div class="jumbotron jumbotron-fluid bg-success">
 
                         <!-- Jumbotron Container -->
                         <div class="container">
 
                             <!-- Title Text -->
-                            <h1 class="display-3">Grocery List Generator</h1>
+                            <h1 class="display-3 jumbotron-content">Grocery List Generator</h1>
 
                             <!-- Lead Text -->
-                            <h5 class="lead">Find food and cocktail recipes using key ingredients and generate a grocery list.</h5>
+                            <h5 class="lead jumbotron-content">Find food and cocktail recipes using key ingredients and generate a grocery list.</h5>
 
                         </div>
                         <!-- End of Jumbotron Container -->
@@ -64,7 +66,7 @@
             <!-- End Header Row -->
 
             <!-- Input Row -->
-            <div class="row">
+            <div id="search-input-row" class="row">
 
                 <!-- Food Input Group -->
                 <h5>Search for Food Recipes by Ingredient</h5>
@@ -96,19 +98,19 @@
             <!-- End of Input Row -->
 
             <!-- Recipe Cards and Grocery List Row -->
-            <div class="row">
+            <div id="recipe-columns" class="row">
 
-                <div id="food-recipe-row" class="col-sm-5 card-deck"  style="display:block">
+                <div id="food-recipe-row" class="col-sm-4 card-deck"  style="display:block">
                 <!-- Food Recipe Cards Go Here -->
     
                 </div>
     
-                <div id="drink-recipe-row" class="col-sm-5 card-deck"  style="display:block">
+                <div id="drink-recipe-row" class="col-sm-4 card-deck"  style="display:block">
                 <!-- Drink Recipe Cards Go Here -->
     
                 </div>
                  
-                <div id="grocery-list-row" class="col-sm-2" style="display:block">
+                <div id="grocery-list-row" class="col-sm-4" style="display:block">
                 <!-- Grocery List Cards Go Here -->
     
                 </div>

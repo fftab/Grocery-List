@@ -1,18 +1,21 @@
 
 // Setting Drink Ingredients Array
 let drinkIngredients = [];
+
 // Setting Drink Directions Array
 let drinkDirections = [];
-
-let drinkSearch;
-
-let foodSearch;
 
 // Setting Recipe Ingredients Array
 let recipeIngredients = [];
 
 // Setting Recipe Directions Array
 let recipeDirections = [];
+
+// Initializing drinkSearch
+let drinkSearch;
+
+// Initializing foodSearch
+let foodSearch;
 
 /*
                 SEARCH PARAMETERS FOR THECOCKTAILDB API
@@ -292,8 +295,9 @@ function renderFoodRecipes()
     });
 }
 
+// Adding Event Listener for Food Search Button
 $("#food-search-btn").click(renderFoodRecipes);
-
+// Adding Event Listener for Drink Search Button
 $("#drink-search-btn").click(renderDrinksRecipes);
 
 $("#drink-recipe-row").on("click", "div", function(){
@@ -343,8 +347,8 @@ $("#drink-recipe-row").on("click", "div", function(){
         string = drinkInfo.drinks[0].strMeasure15 + drinkInfo.drinks[0].strIngredient15;
         drinkIngredients.push(string);
 
-
-        for(let i = drinkIngredients.length -1; i >= 0; i--)
+        // For Each Index of Drink Ingredients
+        for (let i = drinkIngredients.length -1; i >= 0; i--)
         {
             if(drinkIngredients[i] === 0)
                 drinkIngredients.pop();
@@ -360,9 +364,14 @@ $("#drink-recipe-row").on("click", "div", function(){
 
 $("#food-recipe-row").on("click", "div", function(){
 
+    // Logging This to Console
+    console.log(this);
+    //
     foodSearch = $(this).data("recipesearch");
-    let searchIndex = $(this).data("recipeindex");;
-    let queryUrl = "https://api.edamam.com/search?q="+ foodSearch + "&from=" + searchIndex  + "&app_id=9abd2680&app_key=0c3cd84eab883285f12414db93b17a73"
+    // 
+    let searchIndex = $(this).data("recipeindex");
+    // Setting QueryURL
+    let queryUrl = "https://api.edamam.com/search?q="+ foodSearch + "&from=" + searchIndex  + "&app_id=9abd2680&app_key=0c3cd84eab883285f12414db93b17a73";
 
     $.ajax({
         url: queryUrl,
@@ -378,18 +387,29 @@ $("#food-recipe-row").on("click", "div", function(){
     
 });
 
+// Calling Display List Function
 displayList();
 
-function displayList()
-{
+// Declaring Display List Function
+function displayList() {
+
+    // Clearing Row Content Before Populating Again
     $("#grocery-list-row").html("");
+    // Setting Variable to New Header 3 Element
     let foodHeader = $("<h3>");
-    foodHeader.text("Food Recipe Ingredients")
+    // Setting Text for Food Recipe Header
+    foodHeader.text("Food Recipe Ingredients");
+    // Setting Variable to New Unordered List HTML Element
     let foodList = $("<ul>");
+
+    // Setting Variable to New Header 3 Element
     let drinkHeader = $("<h3>");
-    drinkHeader.text("Drink Recipe Ingredients")
+    // Setting Text for Drink Recipe Header
+    drinkHeader.text("Drink Recipe Ingredients");
+    // Setting Variable to New Unordered List
     let drinkList = $("<ul>");
 
+    //
     for(let i = 0; i < drinkIngredients.length; i++)
     {
         let newLI = $("<li>");
@@ -407,10 +427,15 @@ function displayList()
 
     }   
 
-    $("#grocery-list-row").append(foodHeader);
-    $("#grocery-list-row").append(foodList);
-    $("#grocery-list-row").append(drinkHeader);
-    $("#grocery-list-row").append(drinkList);
+    // Prepending Food Recipe Header to the Food Recipe Row
+    $("#food-recipe-row").prepend(foodHeader);
+    // Appending Food Recipes to the Food Recipe Row
+    $("#food-recipe-row").append(foodList);
+    // Prepending Drink Recipe Header to Drink Recipe Row
+    $("#drink-recipe-row").prepend(drinkHeader);
+    // Appending Drink Recipes to Drink Recipe Row
+    $("#drink-recipe-row").append(drinkList);
 
 }
 
+// strDrinkThumb for Drink Thumbnail Images

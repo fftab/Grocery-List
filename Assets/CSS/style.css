@@ -5,17 +5,24 @@
 
 }
 
-/* Body Margins */
-body {
+/* Padding for Bottom of Search Input Row */
+#search-input-row {
 
-    margin: 10px 10px;
+    padding-bottom: 20px;
 
 }
 
-/* Container Margins */
-.container {
+/* Margins for Recipe Columns */
+#recipe-columns {
 
-    margin: 10px 0px;
+    margin: 20px 10px;
+
+}
+
+/* Displaying Jumbotron Content in Center */
+.jumbotron-content {
+
+    text-align: center;
 
 }
 
