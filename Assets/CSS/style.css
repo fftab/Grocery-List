@@ -5,17 +5,62 @@
 
 }
 
-/* Body Margins */
-body {
+/* Padding for Bottom of Search Input Row */
+#search-input-row {
 
-    margin: 10px 10px;
+    padding-bottom: 20px;
 
 }
 
-/* Container Margins */
-.container {
+/* Margins for Recipe Columns */
+#recipe-columns {
 
-    margin: 10px 0px;
+    margin: 20px 10px;
+
+}
+
+/* Displaying Content in Center */
+.center-content {
+
+    text-align: center;
+
+}
+
+.styled-font {
+
+    font-family: 'Permanent Marker', cursive;
+
+    text-align: center;
+
+}
+
+.bottom-padding {
+
+    padding-bottom: 30px;
+
+}
+
+.navbar-padding {
+
+    padding-bottom: 100px;
+
+}
+
+.top-padding {
+
+    padding-top: 30px;
+
+}
+
+.styled-column {
+
+    justify-content: center;
+
+}
+
+.styled-button {
+
+    width: 200px;
 
 }
 

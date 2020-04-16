@@ -17,9 +17,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- End Meta Data -->
 
+        <!-- Out CSS -->
+        <link rel="stylesheet" href="Assets/CSS/style.css"/>
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <!-- Google Fonts CSS -->
+        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome CSS -->
+        <script src="https://kit.fontawesome.com/44f6844bdb.js" crossorigin="anonymous"></script>
 
         <!-- Doc Title -->
         <title>Grocery List Generator</title>
@@ -34,46 +42,32 @@
         <div class="container">
 
             <!-- Header Row -->
-            <div class="row">
+            <div class="row navbar-padding">
 
-                <!-- One-Column Hero Header in Row One -->
-                <header class="col-md-12">
+                <nav class="navbar fixed-top bg-success">
+                        
+                    <!-- Title Text -->
+                    <h1 class="center-content">Grocery List Generator</h1>
 
-                    <!-- Jumbotron-->
-                    <div class="jumbotron jumbotron-fluid">
+                    <!-- Lead Text -->
+                    <h5 class="center-content">Find food and cocktail recipes using key ingredients and generate a grocery list.</h5>
 
-                        <!-- Jumbotron Container -->
-                        <div class="container">
-
-                            <!-- Title Text -->
-                            <h1 class="display-3">Grocery List Generator</h1>
-
-                            <!-- Lead Text -->
-                            <h5 class="lead">Find food and cocktail recipes using key ingredients and generate a grocery list.</h5>
-
-                        </div>
-                        <!-- End of Jumbotron Container -->
-
-                    </div>
-                    <!-- End of Jumbotron-->
-
-                </header>
-                <!-- End of Hero Header -->
+                </nav>
 
             </div>
             <!-- End Header Row -->
 
             <!-- Input Row -->
-            <div class="row">
+            <div id="search-input-row top-padding" class="row">
 
                 <!-- Food Input Group -->
                 <h5>Search for Food Recipes by Ingredient</h5>
 
-                <div class="input-group">
+                <div class="input-group bottom-padding">
 
                     <input id="food-ingredients-input" type="text" class="form-control" placeholder="ex. Chicken, Kale, Butter"/>
                     <div class="input-group-append">
-                        <button id="food-search-btn" class="btn btn-success" type="button">Search Food</button>
+                        <button id="food-search-btn" class="btn btn-success styled-button" type="button">Search Meals <i class="fas fa-utensils"></i></button>
                     </div>
 
                 </div>
@@ -82,11 +76,11 @@
                 <!-- Drink Input Group -->
                 <h5>Search for Drink Recipes by Ingredient</h5>
 
-                <div class="input-group">
+                <div class="input-group bottom-padding">
 
                     <input id="drink-ingredients-input" type="text" class="form-control" placeholder="ex. Rum, Tequila, Strawberry Schnapps"/>
                     <div class="input-group-append">
-                        <button id="drink-search-btn" class="btn btn-success" type="button">Search Drinks</button>
+                        <button id="drink-search-btn" class="btn btn-success styled-button" type="button">Search Drinks <i class="fas fa-cocktail"></i></button>
                     </div>
 
                 </div>
@@ -96,22 +90,43 @@
             <!-- End of Input Row -->
 
             <!-- Recipe Cards and Grocery List Row -->
-            <div class="row">
+            <div id="recipe-columns" class="row">
 
-                <div id="food-recipe-row" class="col-sm-5 card-deck"  style="display:block">
-                <!-- Food Recipe Cards Go Here -->
+                <!-- Food Recipes -->
+                <div class="col-sm-5 card-deck" style="display:block">
+
+                    <!-- Header for Food Recipe Column -->
+                    <h3 class="styled-font bottom-padding">Meal Recipes</h3>
+                    
+                    <!-- Food Recipe Cards Go Here -->
+                    <div id="food-recipe-row" class="styled-column"></div>
     
                 </div>
+                <!-- End of Food Recipes -->
     
-                <div id="drink-recipe-row" class="col-sm-5 card-deck"  style="display:block">
-                <!-- Drink Recipe Cards Go Here -->
+                <!-- Drink Recipes -->
+                <div class="col-sm-5 card-deck"  style="display:block">
+
+                    <!-- Header for Drink Recipe Column -->
+                    <h3 class="styled-font bottom-padding">Drink Recipes</h3>
+
+                    <!-- Drink Recipe Cards Go Here -->
+                    <div id="drink-recipe-row" class="styled-column"></div>
+
+                </div>
+                <!-- End of Drink Recipes -->
+
+                <!-- Grocery Lists -->
+                <div class="col-sm-2" style="display:block">
+
+                    <!-- Header for Grocery List Column -->
+                    <h3 class="styled-font bottom-padding">Grocery Lists</h3>
+
+                    <!-- Grocery List Cards Go Here -->
+                    <div id="grocery-list-row" class="styled-column"></div>
     
                 </div>
-                 
-                <div id="grocery-list-row" class="col-sm-2" style="display:block">
-                <!-- Grocery List Cards Go Here -->
-    
-                </div>
+                <!-- End of Grocery Lists -->
 
             </div>
             <!-- End of Recipe Cards and Grocery List -->
