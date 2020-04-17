@@ -129,50 +129,6 @@ function renderDrinksRecipes()
                 let drinksCardIngredientsList = $("<p>");
                 drinksCardIngredientsList.addClass("text-white");
 
-        
-                //Create an array to hold all drinks
-                // let drinks = [];
-                //Go through all of the drink ingredients and add to the array
-                //let tempListItem = allDrinks[i].strIngredient[a];
-                //tempListItem = tempListItem.trim();
-                //drinks.push(tempListItem);
-
-                //grab the each ingredient and add their respecective measurements
-                //put both items in the same string
-                // let string = allDrinks[i].strIngredient1 + allDrinks[i].strMeasure1;
-                // drinks.push(string)
-                //     string = allDrinks[i].strIngredient2 + allDrinks[i].strMeasure2;
-                // drinks.push(string)
-                //     string = allDrinks[i].strIngredient3 + allDrinks[i].strMeasure3;
-                // drinks.push(string)
-                //     string = allDrinks[i].strIngredient4 + allDrinks[i].strMeasure4;
-                // drinks.push(string)
-                //     string = allDrinks[i].strIngredient5 + allDrinks[i].strMeasure5;
-                // drinks.push(string)
-                //     string = allDrinks[i].strIngredient6 + allDrinks[i].strMeasure6;
-                // drinks.push(string)
-                //     string = allDrinks[i].strIngredient7 + allDrinks[i].strMeasure7;
-                // drinks.push(string)
-                //     string = allDrinks[i].strIngredient8 + allDrinks[i].strMeasure8;
-                // drinks.push(string)
-                //     string = allDrinks[i].strIngredient9 + allDrinks[i].strMeasure9;
-                // drinks.push(string)
-                //     string = allDrinks[i].strIngredient10 + allDrinks[i].strMeasure10;
-                // drinks.push(string)
-                //     string = allDrinks[i].strIngredient11 + allDrinks[i].strMeasure11;
-                // drinks.push(string)
-                //     string = allDrinks[i].strIngredient12 + allDrinks[i].strMeasure12;
-                // drinks.push(string)
-                //     string = allDrinks[i].strIngredient13 + allDrinks[i].strMeasure13;
-                // drinks.push(string)
-                //     string = allDrinks[i].strIngredient14 + allDrinks[i].strMeasure14;
-                // drinks.push(string)
-                //     string = allDrinks[i].strIngredient15 + allDrinks[i].strMeasure15;
-                // drinks.push(string)
-
-                // drinksCardIngredientsList.text(drinks);
-
-                // drinksCard.append(drinksCardIngredientsList);
                 let instructions = $("<p>");
                 instructions.text(allDrinks[i].strInstructions);
                 drinksCard.append(instructions);
@@ -182,6 +138,7 @@ function renderDrinksRecipes()
 
         console.log("string");
 
+        $("#errorMessage").text("Please Input A Valid Ingredient For The Drink Input");
         $('.ui.modal').modal('show');
 
     });
@@ -234,6 +191,15 @@ function renderFoodRecipes()
 
         let recipeList = recipes.hits;
         
+        if(recipeList.length === 0)
+        {
+            console.log("string");
+            $("#errorMessage").text("Please Input A Valid Ingredient For The Food Input");
+
+            $('.ui.modal').modal('show');
+
+        }
+
         let count = recipes.from;
         let searchedIngredient = recipes.q;
         console.log(count);
@@ -303,12 +269,6 @@ function renderFoodRecipes()
             count++;
 
         }
-    }).fail(function() {
-
-        console.log("string");
-
-        $('.ui.modal').modal('show');
-
     });
 }
 
