@@ -412,8 +412,6 @@ function displayList() {
 
     // Clearing Row Content Before Populating Again
     $("#grocery-list-row").html("");
-    $('#food-recipe-row').html("");
-    $("#drink-recipe-row").html("");
     
     // Setting Variable to New Unordered List HTML Element
     let foodList = $("<ul>");
