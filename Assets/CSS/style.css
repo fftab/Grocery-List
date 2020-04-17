@@ -5,21 +5,83 @@
 
 }
 
-/* Body Margins */
-body {
+.styled-header {
 
-    margin: 10px 10px;
+    font-family: 'Permanent Marker', cursive;
 
 }
 
-/* Container Margins */
-.container {
+/* Padding for Bottom of Search Input Row */
+#search-input-row {
 
-    margin: 10px 0px;
+    padding-bottom: 20px;
+
+}
+
+/* Margins for Recipe Columns */
+#recipe-columns {
+
+    margin: 20px 10px;
+
+}
+
+/* Displaying Content in Center */
+.center-content {
+
+    text-align: center;
+
+}
+
+/* First Font */
+.styled-font {
+
+    font-family: 'Permanent Marker', cursive;
+
+    text-align: center;
+
+}
+
+/* Second Font */
+.styled-font-2 {
+
+    text-align: center;
+
+    padding: 10px;
+
+}
+
+.bottom-padding {
+
+    padding-bottom: 30px;
+
+}
+
+.navbar-padding {
+
+    padding-bottom: 100px;
+
+}
+
+.top-padding {
+
+    padding-top: 30px;
+
+}
+
+.styled-column {
+
+    justify-content: center;
+
+}
+
+.styled-button {
+
+    width: 200px;
 
 }
 
 /* Image Sizing */
+
  img {
 
     max-height: 300px;
@@ -48,4 +110,38 @@ p {
 
 h3 {
     padding: 5px
+}
+
+.styled-image {
+
+    height: 200px;
+
+    width: 300px;
+
+    justify-content: center;
+
+}
+
+.styled-card {
+
+    justify-content: center;
+
+    text-align: center;
+
+    font-family: 'Magra', sans-serif;
+
+    padding-bottom: 20px;
+
+}
+
+.hide {
+
+    visibility: hidden;
+
+}
+
+.ui.dimmer {
+
+    top: 50px!important;
+
 }
