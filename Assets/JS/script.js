@@ -102,7 +102,7 @@ function renderDrinksRecipes()
             console.log(allDrinks[i])
             //Create the Card Div for the information
                 //Give classes: card, bg-success, text-white
-                let drinksCard = $("<div>").addClass("card bg-success text-white");
+                let drinksCard = $("<div>").addClass("card bg-success text-white styled-card");
                 //append to grocery-list-row/Updated: append to drink recipe row
                 $("#drink-recipe-row").append(drinksCard);
                 //Give attribute data-drinkID with the idDrink property;
@@ -112,13 +112,17 @@ function renderDrinksRecipes()
             //Create Header With tag of h3
                 let drinksCardHeader = $("<h3>");
                 //Give text of drink name
-                drinksCardHeader.text(allDrinks[i].strDrink)
+                drinksCardHeader.text(allDrinks[i].strDrink);
+                // Setting Class to Drinks Card Header
+                drinksCardHeader.addClass("styled-font-2");
                 //Append to the DIV created  at the start of the for loop
                 drinksCard.append(drinksCardHeader);
             //Create a image tag for the picture drink
                 let drinksCardImg = $("<img>");
                 //Give a src to the tag with strDrinkThumb
-                drinksCardImg.attr("src", allDrinks[i].strDrinkThumb)
+                drinksCardImg.attr("src", allDrinks[i].strDrinkThumb);
+                // Setting Class to drinkdCardImg
+                drinksCardImg.addClass("styled-image");
                 //Append to the DIV created at the start of the for loop
                 drinksCard.append(drinksCardImg);
             //Create a p tag to hold all ingredients of the drink
@@ -173,9 +177,14 @@ function renderDrinksRecipes()
                 instructions.text(allDrinks[i].strInstructions);
                 drinksCard.append(instructions);
         }
-                    
 
-    }); 
+    }).fail(function() {
+
+        console.log("string");
+
+        $('.ui.modal').modal('show');
+
+    });
 
 }
 
@@ -240,7 +249,7 @@ function renderFoodRecipes()
             // Setting Variable to New Div with Bootstrap Classes
             let recipeCard = $("<div>");
             // Adding Classes to Recipe Cards
-            recipeCard.addClass("card bg-success text-white recipe");
+            recipeCard.addClass("card bg-success text-white recipe styled-card");
             // Setting Recipe Card Attribute of Recipe Index in Data with Value of Count
             recipeCard.attr("data-recipeIndex", count);
             // Setting Recipe Card Attribute of Recipe Search in Data with Value of Searched Ingredient
@@ -252,13 +261,15 @@ function renderFoodRecipes()
             let recipeCardHeader = $("<h3>");
             // Populating Recipe Card Header Text
             recipeCardHeader.text(currentRecipe.label);
+            // Setting Class for Recipe Card Header
+            recipeCardHeader.addClass("styled-font-2");
             // Appending Recipe Card Header to Recipe Card
             recipeCard.append(recipeCardHeader);
 
             // Get the thumbnail of each recipe (thumbnail)
             let recipeCardImg = $("<img>");
             // give thumbnail class
-            recipeCardImg.addClass("image");
+            recipeCardImg.addClass("styled-image");
             // give thumbnail src
             recipeCardImg.attr("src", currentRecipe.image)
             //Append
@@ -292,6 +303,12 @@ function renderFoodRecipes()
             count++;
 
         }
+    }).fail(function() {
+
+        console.log("string");
+
+        $('.ui.modal').modal('show');
+
     });
 }
 
@@ -366,9 +383,9 @@ $("#food-recipe-row").on("click", "div", function(){
 
     // Logging This to Console
     console.log(this);
-    //
+    
     foodSearch = $(this).data("recipesearch");
-    // 
+    
     let searchIndex = $(this).data("recipeindex");
     // Setting QueryURL
     let queryUrl = "https://api.edamam.com/search?q="+ foodSearch + "&from=" + searchIndex  + "&app_id=9abd2680&app_key=0c3cd84eab883285f12414db93b17a73";
@@ -404,7 +421,6 @@ function displayList() {
     // Setting Variable to New Unordered List
     let drinkList = $("<ul>");
 
-    //
     for(let i = 0; i < drinkIngredients.length; i++)
     {
         let newLI = $("<li>");
@@ -422,13 +438,11 @@ function displayList() {
 
     }   
 
-    
     // Appending Food Recipes to the Food Recipe Row
-    $("#food-recipe-row").append(foodList);
+    $("#grocery-list-row").append(foodList);
+    // 
     
     // Appending Drink Recipes to Drink Recipe Row
-    $("#drink-recipe-row").append(drinkList);
+    $("#grocery-list-row").append(drinkList);
 
 }
-
-// strDrinkThumb for Drink Thumbnail Images
