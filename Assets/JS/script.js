@@ -2,20 +2,34 @@
 // Setting Drink Ingredients Array
 let drinkIngredients = [];
 
-// Setting Drink Directions Array
-let drinkDirections = [];
-
 // Setting Recipe Ingredients Array
 let recipeIngredients = [];
 
-// Setting Recipe Directions Array
-let recipeDirections = [];
-
+let savedDrink = "";
+let savedFood = "";
 // Initializing drinkSearch
 let drinkSearch;
 
 // Initializing foodSearch
 let foodSearch;
+
+function init()
+{
+    drinkIngredients = JSON.parse(localStorage.getItem("drinkList"));
+    recipeIngredients = JSON.parse(localStorage.getItem("foodList"));
+    if(drinkIngredients === null)
+        drinkIngredients = []
+    if(recipeIngredients === null)
+        drinkIngredients = []
+
+    savedDrink = JSON.parse(localStorage.getItem("drinkName"));
+    savedFood = JSON.parse(localStorage.getItem("foodName"));
+    $("#drink-name").text(savedDrink);
+    $("#food-name").text(savedFood);
+
+
+    updateList();
+}
 
 /*
                 SEARCH PARAMETERS FOR THECOCKTAILDB API
@@ -89,7 +103,7 @@ function renderDrinksRecipes()
     }).then(function(drinkInfo){
         console.log(drinkInfo);
     
-        $("#drink-recipe-row").html("");
+        $("#card-area").html("");
 
         let allDrinks = drinkInfo.drinks;
         console.log(allDrinks);
@@ -99,12 +113,13 @@ function renderDrinksRecipes()
             if(i >= 10)
                 break;
         
-            console.log(allDrinks[i])
             //Create the Card Div for the information
                 //Give classes: card, bg-success, text-white
                 let drinksCard = $("<div>").addClass("card bg-success text-white styled-card");
                 //append to grocery-list-row/Updated: append to drink recipe row
-                $("#drink-recipe-row").append(drinksCard);
+                $("#card-area").append(drinksCard);
+                //Add datatype of drink
+                drinksCard.attr("data-type", "drink");
                 //Give attribute data-drinkID with the idDrink property;
                 drinksCard.attr("data-drinkID", allDrinks[i].idDrink);
                 //Give attribute data-drinkName with the strDrink property;
@@ -139,7 +154,7 @@ function renderDrinksRecipes()
         console.log("string");
 
         $("#errorMessage").text("Please Input A Valid Ingredient For The Drink Input");
-        $('.ui.modal').modal('show');
+        $('.invalid-ipnut.modal').modal('show');
 
     });
 
@@ -179,7 +194,7 @@ callback	no	    string	    Callback parameter for JSONP. This will “envelop”
 */
 function renderFoodRecipes()
 {
-    $("#food-recipe-row").html("");
+    $("#card-area").html("");
     foodSearch = $("#food-ingredients-input").val();
     let queryUrl = "https://api.edamam.com/search?q="+ foodSearch + "&app_id=9abd2680&app_key=0c3cd84eab883285f12414db93b17a73";
     
@@ -196,13 +211,14 @@ function renderFoodRecipes()
             console.log("string");
             $("#errorMessage").text("Please Input A Valid Ingredient For The Food Input");
 
-            $('.ui.modal').modal('show');
+            $('.invalid-ipnut.modal').modal('show');
+
+            return;
 
         }
 
         let count = recipes.from;
         let searchedIngredient = recipes.q;
-        console.log(count);
 
         // // Dynamically Create Food Recipe Card
 
@@ -216,12 +232,14 @@ function renderFoodRecipes()
             let recipeCard = $("<div>");
             // Adding Classes to Recipe Cards
             recipeCard.addClass("card bg-success text-white recipe styled-card");
+            //Add datatype for card type
+            recipeCard.attr("data-type", "food");
             // Setting Recipe Card Attribute of Recipe Index in Data with Value of Count
             recipeCard.attr("data-recipeIndex", count);
             // Setting Recipe Card Attribute of Recipe Search in Data with Value of Searched Ingredient
             recipeCard.attr("data-recipeSearch", searchedIngredient);
             // Append Recipe Card to HTML Element with ID of Food Recipe Row
-            $("#food-recipe-row").append(recipeCard);
+            $("#card-area").append(recipeCard);
 
             // Setting Variable for New Header 3
             let recipeCardHeader = $("<h3>");
@@ -272,14 +290,45 @@ function renderFoodRecipes()
     });
 }
 
-// Adding Event Listener for Food Search Button
-$("#food-search-btn").click(renderFoodRecipes);
-// Adding Event Listener for Drink Search Button
-$("#drink-search-btn").click(renderDrinksRecipes);
 
-$("#drink-recipe-row").on("click", "div", function(){
+// Declaring Display List Function
+function updateList() {
 
-    let drinkID = $(this).data("drinkid");
+    // Clearing Row Content Before Populating Again
+    $("#food-list").html("");
+    $("#drink-list").html("");
+
+    
+    $("#drink-name").html("");
+    $("#food-name").html("");
+
+    
+    $("#drink-name").text(savedDrink);
+    $("#food-name").text(savedFood);
+    
+
+    for(let i = 0; i < drinkIngredients.length; i++)
+    {
+        let newLI = $("<li>");
+        newLI.text(drinkIngredients[i]);
+        $("#drink-list").append(newLI);
+
+    }
+
+
+    for(let i = 0; i < recipeIngredients.length; i++)
+    {
+        let newLI = $("<li>");
+        newLI.text(recipeIngredients[i]);
+        $("#food-list").append(newLI);
+
+    }   
+
+}
+
+function grabDrinkInfo(card)
+{
+    let drinkID = card.data("drinkid");
     // Lookup ingredient by ID
     let queryUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkID;
 
@@ -291,6 +340,7 @@ $("#drink-recipe-row").on("click", "div", function(){
         method: "GET",
 
     }).then(function(drinkInfo){
+        savedDrink = drinkInfo.drinks[0].strDrink;
         drinkIngredients = [];
 
         let string =  drinkInfo.drinks[0].strMeasure1 + drinkInfo.drinks[0].strIngredient1;
@@ -333,20 +383,21 @@ $("#drink-recipe-row").on("click", "div", function(){
                 break;
         }
 
-        displayList();
+
+        localStorage.setItem("drinkList", JSON.stringify(drinkIngredients));
+        localStorage.setItem("drinkName", JSON.stringify(savedDrink));
+
+        updateList();
 
     });
+}
 
-});
-
-$("#food-recipe-row").on("click", "div", function(){
-
-    // Logging This to Console
-    console.log(this);
+function grabFoodInfo(card){
+    console.log(card);
+     
+    foodSearch = card.data("recipesearch");
     
-    foodSearch = $(this).data("recipesearch");
-    
-    let searchIndex = $(this).data("recipeindex");
+    let searchIndex = card.data("recipeindex");
     // Setting QueryURL
     let queryUrl = "https://api.edamam.com/search?q="+ foodSearch + "&from=" + searchIndex  + "&app_id=9abd2680&app_key=0c3cd84eab883285f12414db93b17a73";
 
@@ -355,52 +406,33 @@ $("#food-recipe-row").on("click", "div", function(){
         method: "GET",
     // Once Recipe Object Obtained, THEN perform function on Recipes
     }).then(function(recipe){
+        savedFood = recipe.hits[0].recipe.label;
+        recipeIngredients = [];
 
         recipeIngredients = recipe.hits[0].recipe.ingredientLines;
-        displayList();
+        
+        localStorage.setItem("foodList", JSON.stringify(recipeIngredients));
+
+        updateList();
 
     });
 
-    
+}
+
+$("#card-area").on("click", "div", function(){ 
+    let currentCard = $(this);
+    if(currentCard.data("type") === "drink")
+        grabDrinkInfo(currentCard);
+    else if(currentCard.data("type") === "food")
+        grabFoodInfo(currentCard);
 });
 
-// Calling Display List Function
-displayList();
+// Adding Event Listener for Food Search Button
+$("#food-search-btn").click(renderFoodRecipes);
+// Adding Event Listener for Drink Search Button
+$("#drink-search-btn").click(renderDrinksRecipes);
 
-// Declaring Display List Function
-function displayList() {
+$("#show-list").click(function(){
+    $('.list.modal').modal('show');
+});
 
-    // Clearing Row Content Before Populating Again
-    $("#grocery-list-row").html("");
-    
-    // Setting Variable to New Unordered List HTML Element
-    let foodList = $("<ul>");
-
-    // Setting Variable to New Unordered List
-    let drinkList = $("<ul>");
-
-    for(let i = 0; i < drinkIngredients.length; i++)
-    {
-        let newLI = $("<li>");
-        newLI.text(drinkIngredients[i]);
-        drinkList.append(newLI);
-
-    }
-
-
-    for(let i = 0; i < recipeIngredients.length; i++)
-    {
-        let newLI = $("<li>");
-        newLI.text(recipeIngredients[i]);
-        foodList.append(newLI);
-
-    }   
-
-    // Appending Food Recipes to the Food Recipe Row
-    $("#grocery-list-row").append(foodList);
-    // 
-    
-    // Appending Drink Recipes to Drink Recipe Row
-    $("#grocery-list-row").append(drinkList);
-
-}
