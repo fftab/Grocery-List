@@ -18,15 +18,7 @@
         <!-- End Meta Data -->
 
         <link rel="stylesheet" href="./Assets/CSS/style.css">
-
-        <!-- Semantic UI CSS -->
-        <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/modal.min.js"/>
-        <script
-            src="https://code.jquery.com/jquery-3.1.1.min.js"
-            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-            crossorigin="anonymous"></script>
-        <script src="semantic/dist/semantic.min.js"></script> -->
-
+        
         <script defer src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
         <script defer src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
@@ -51,24 +43,24 @@
 
     <!-- Beginning of Body -->
     <body>
+    
+        <nav class="navbar bg-success navbar-padding">
+            <div class="row">
+
+                <!-- Title Text -->
+                <h1 class="center-content col-sm-5">Grocery List Generator</h1>
+
+                <!-- Lead Text -->
+                <h5 class="center-content col-sm-7 ">Find food and cocktail recipes using key ingredients and generate a grocery list.</h5>
+
+            </div>
+                
+        </nav>
+
         
         <!-- Beginning of Grid  -->
         <div class="container">
 
-            <!-- Header Row -->
-            <div class="row navbar-padding">
-
-                <nav class="navbar fixed-top bg-success">
-                        
-                    <!-- Title Text -->
-                    <h1 class="center-content">Grocery List Generator</h1>
-
-                    <!-- Lead Text -->
-                    <h5 class="center-content">Find food and cocktail recipes using key ingredients and generate a grocery list.</h5>
-
-                </nav>
-
-            </div>
             <!-- End Header Row -->
 
             <!-- Input Row -->
@@ -100,22 +92,57 @@
                 </div>
                 <!-- End of Drink Input Group -->
                 
+
+                <!-- Drink Input Group -->
+                <h5>Show me The List!</h5>
+
+                <div class="input-group bottom-padding">
+
+                    <button id="show-list" class="btn btn-success">Show List</button>
+
+                </div>
+                <!-- End of Drink Input Group -->
+                
             </div>
             <!-- End of Input Row -->
 
-            <!-- Recipe Cards and Grocery List Row -->
-            <div id="recipe-columns" class="row">
-
-            
-                <div id="food-recipe-row" class="styled-column col-sm-5 card-deck"></div>
-                <div id="drink-recipe-row" class="styled-column col-sm-5 card-deck"></div>
-                <div id="grocery-list-row" class="styled-column col-sm-2"></div>
-
+            <div id="card-area" class="card-deck">
 
             </div>
+            
             <!-- End of Recipe Cards and Grocery List -->
 
-                <div class="ui basic modal">
+                <div class="ui list modal">
+
+                    <div class="ui icon header">
+                        
+                        <center>
+                            <h2>
+                                Grocery List
+                            </h2>
+                        </center>
+                        
+                    </div>
+
+                        <div class="content">
+                            <center>
+                                <h3 id="food-name"></h3>
+                                <ul id="food-list"></ul>
+                                <h3 id="drink-name"></h3>
+                                <ul id="drink-list"></ul>
+                            </center>
+                        </div>
+
+                    <div class="actions">
+                        <center>
+                            <button class="ui green ok inverted button">
+                                OK
+                            </button>
+                        </center>
+                    </div>
+                </div> 
+
+                <div class="ui basic invalid-ipnut modal">
 
                     <div class="ui icon header">
                         
@@ -128,7 +155,7 @@
     
                         <div class="content">
                             <center>
-                                <p>Please Input a Valid Ingredient</p>
+                                <p id="errorMessage"></p>
                             </center>
                         </div>
     
@@ -139,7 +166,7 @@
                             </button>
                         </center>
                     </div>
-                  </div> 
+                </div> 
             
         </div>
         <!-- End of Grid -->
