@@ -95,7 +95,12 @@
     flex-direction: column;
 
 }
+/* Drink CSS Below */
+#food-recipe-row {
+    /* display: flex; */
+    flex-direction: column;
 
+}
 .card {
     margin-top: 25px;
     padding: 1% 3%
