@@ -5,6 +5,12 @@
 
 }
 
+.styled-header {
+
+    font-family: 'Permanent Marker', cursive;
+
+}
+
 /* Padding for Bottom of Search Input Row */
 #search-input-row {
 
@@ -26,11 +32,21 @@
 
 }
 
+/* First Font */
 .styled-font {
 
     font-family: 'Permanent Marker', cursive;
 
     text-align: center;
+
+}
+
+/* Second Font */
+.styled-font-2 {
+
+    text-align: center;
+
+    padding: 10px;
 
 }
 
@@ -65,10 +81,36 @@
 }
 
 /* Image Sizing */
-/* .image {
+.styled-image {
 
-    height: 150px;
+    height: 200px;
 
-    width: 150px;
+    width: 300px;
 
-} */
+    justify-content: center;
+
+}
+
+.styled-card {
+
+    justify-content: center;
+
+    text-align: center;
+
+    font-family: 'Magra', sans-serif;
+
+    padding-bottom: 20px;
+
+}
+
+.hide {
+
+    visibility: hidden;
+
+}
+
+.ui.dimmer {
+
+    top: 50px!important;
+
+}
