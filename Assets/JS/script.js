@@ -24,6 +24,7 @@ function init()
 
     savedDrink = JSON.parse(localStorage.getItem("drinkName"));
     savedFood = JSON.parse(localStorage.getItem("foodName"));
+    console.log(savedFood);
     $("#drink-name").text(savedDrink);
     $("#food-name").text(savedFood);
 
@@ -106,8 +107,6 @@ function renderDrinksRecipes()
         $("#card-area").html("");
 
         let allDrinks = drinkInfo.drinks;
-        console.log(allDrinks);
-
         for(let i = 0; i < allDrinks.length; i++){
 
             if(i >= 10)
@@ -208,7 +207,7 @@ function renderFoodRecipes()
         
         if(recipeList.length === 0)
         {
-            console.log("string");
+            
             $("#errorMessage").text("Please Input A Valid Ingredient For The Food Input");
 
             $('.invalid-ipnut.modal').modal('show');
@@ -412,6 +411,7 @@ function grabFoodInfo(card){
         recipeIngredients = recipe.hits[0].recipe.ingredientLines;
         
         localStorage.setItem("foodList", JSON.stringify(recipeIngredients));
+        localStorage.setItem("foodName", JSON.stringify(savedFood));
 
         updateList();
 
