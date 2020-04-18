@@ -23,9 +23,10 @@
 
     margin: 20px 10px;
 
-}
+} 
 
 /* Displaying Content in Center */
+
 .center-content {
 
     text-align: center;
@@ -44,7 +45,7 @@
 /* Second Font */
 .styled-font-2 {
 
-    text-align: center;
+    text-align: center;   
 
     padding: 10px;
 
@@ -58,7 +59,7 @@
 
 .navbar-padding {
 
-    padding-bottom: 100px;
+    margin-bottom: 10px;
 
 }
 
@@ -72,11 +73,11 @@
 
     justify-content: center;
 
-}
+} 
 
 .styled-button {
 
-    width: 200px;
+    width: 150px;
 
 }
 
@@ -90,44 +91,51 @@
 
 } 
 /* Drink CSS Below */
-#drink-recipe-row {
-    /* display: flex; */
-    flex-direction: column;
-
+#card-area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 /* Drink CSS Below */
 #food-recipe-row {
-    /* display: flex; */
+    display: flex;
     flex-direction: column;
 
 }
 .card {
     margin-top: 25px;
-    padding: 1% 3%
+    padding: 1% 3%;
+    min-width: 40% !important;
 }
 
 p {
     padding: 5px;
     line-height: 20px;
-    margin: 0 !important
+    margin: 0 !important;
     
 }
 
 h3 {
-    padding: 5px
+    padding: 5px;
 }
 
-.styled-image {
+.styled-image { 
 
-    height: 200px;
-
-    width: 300px;
-
+    height: fit-content;
+    width: fit-content;
     justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 300px;
 
 }
 
-.styled-card {
+/* #card-area{ */
+    /* display: block; */
+/* } */
+
+.styled-card { 
 
     justify-content: center;
 
@@ -137,18 +145,22 @@ h3 {
 
     padding-bottom: 20px;
 
-}
-
+} 
 .hide {
 
     visibility: hidden;
 
 }
 
-.ui.dimmer {
+.input-group{
+    padding: 5px;
+}
 
-    top: 50px!important;
+.container{
+    padding: 20px !important;
+}
 
+<<<<<<< HEAD
 }
 
 li {
@@ -156,3 +168,5 @@ li {
     list-style-type: ;
 
 }
+=======
+>>>>>>> 278debafcbbf7c35a732f131700585156418e3a2
