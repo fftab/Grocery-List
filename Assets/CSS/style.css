@@ -159,4 +159,13 @@ h3 {
 .container{
     padding: 20px !important;
 }
+.modal{
+    margin-right: auto !important;
+    margin-left: auto !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    width: 100% !important;
+}
+/* 
 
+     */
