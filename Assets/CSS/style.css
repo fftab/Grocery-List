@@ -159,7 +159,15 @@ h3 {
 .container{
     padding: 20px !important;
 }
+.modal{
+    margin-right: auto !important;
+    margin-left: auto !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    width: 100% !important;
+}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 }
 
@@ -170,3 +178,11 @@ li {
 }
 =======
 >>>>>>> 278debafcbbf7c35a732f131700585156418e3a2
+=======
+/* This code removed the bullets from the grocery list */
+ul{
+    list-style-type: none !important;
+    margin: 0;
+    padding: 0;
+}
+>>>>>>> b2cb0fea7e4bd78fe2b167bb8a6131c6691d056c
