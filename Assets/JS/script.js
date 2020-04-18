@@ -437,3 +437,4 @@ $("#show-list").click(function(){
     $('.list.modal').modal('show');
 });
 
+init();
