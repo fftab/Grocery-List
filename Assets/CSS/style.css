@@ -166,3 +166,10 @@ h3 {
     margin-bottom: auto !important;
     width: 100% !important;
 }
+
+/* This code removed the bullets from the grocery list */
+ul{
+    list-style-type: none !important;
+    margin: 0;
+    padding: 0;
+}
