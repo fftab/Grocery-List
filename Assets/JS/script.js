@@ -154,7 +154,7 @@ function renderDrinksRecipes()
         console.log("string");
 
         $("#errorMessage").text("Please Input A Valid Ingredient For The Drink Input");
-        $('.invalid-ipnut.modal').modal('show');
+        $('.invalid-input.modal').modal('show');
 
     });
 
@@ -433,6 +433,7 @@ $("#food-search-btn").click(renderFoodRecipes);
 $("#drink-search-btn").click(renderDrinksRecipes);
 
 $("#show-list").click(function(){
+    console.log ("clicked")
     $('.list.modal').modal('show');
 });
 
